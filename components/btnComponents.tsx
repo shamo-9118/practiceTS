@@ -13,11 +13,11 @@ const styles = [
     },
     {
         bg: "bg-gray-400 font-bold rounded-[7px] shadow-[2px_2px_0_0_rgba(0,0,0,6)] border-[1px] border-[rgba(0,0,0,6)] duration-300",
-        hover:"hover:shadow-none hover:translate-y-[2px] hover:translate-x-[2px] hover:font-normal",
+        hover: "hover:shadow-none hover:translate-y-[2px] hover:translate-x-[2px] hover:font-normal",
         id: 2,
     },
     {
-        bg: "bg-gray-500 border-[0_2px_2px_0]",
+        bg: "bg-white border-2 border-gray-800",
         id: 3,
     },
     {
@@ -31,14 +31,28 @@ export const BtnComponents = () => {
         <div className="my-5 grid gap-3 grid-cols-2 w-1/2 mx-auto">
             {styles.map((style) => {
                 console.log(style);
-                return (
-                    <button
-                        key={style.id}
-                        className={`inline-block mx-auto max-w-[200px] p-[20px_50px] border-gray-800 ${style.bg} ${style.hover} ${style.shadow}`}
-                    >
-                        button
-                    </button>
-                );
+                {
+                    if (style.id === 3) {
+                        return (
+                            <button
+                                key={style.id}
+                                className={`inline-block mx-auto max-w-[200px] p-[20px_50px] border-gray-300 ${style.bg} ${style.hover} ${style.shadow}`}
+                            >
+                                <span></span>
+                                button
+                            </button>
+                        );
+                    } else {
+                        return (
+                            <button
+                                key={style.id}
+                                className={`inline-block mx-auto max-w-[200px] p-[20px_50px] border-gray-800 ${style.bg} ${style.hover} ${style.shadow}`}
+                            >
+                                button
+                            </button>
+                        );
+                    }
+                }
             })}
         </div>
     );
