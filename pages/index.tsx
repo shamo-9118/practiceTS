@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { BtnComponents } from "../components/btnComponents";
+import { Radius } from "../components/Radius";
 
 type HeadChildren = {
     [key: string]: {};
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
     return (
         <div>
             <BtnComponents />
+            <Radius></Radius>
         </div>
     );
 };
