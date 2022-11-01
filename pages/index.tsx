@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { BtnComponents } from "../components/btnComponents";
 import { Radius } from "../components/Radius";
+import {Rotate} from "../components/routate"
 
 type HeadChildren = {
     [key: string]: {};
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
 
     return (
         <div>
+            <Rotate></Rotate>
             <BtnComponents />
             <Radius></Radius>
         </div>
