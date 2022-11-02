@@ -17,7 +17,7 @@ const styles = [
         id: 2,
     },
     {
-        bg: "bg-white border-2 border-gray-800",
+        bg: "bg-white box-border",
         id: 3,
     },
     {
@@ -36,10 +36,11 @@ export const BtnComponents = () => {
                         return (
                             <button
                                 key={style.id}
-                                className={`inline-block mx-auto max-w-[200px] p-[20px_50px] border-gray-300 ${style.bg} ${style.hover} ${style.shadow}`}
+                                className={`inline-block group relative overflow-hidden mx-auto w-[150px] max-w-[200px] border-gray-700 border-2 ${style.bg} hover:span:translate-none hover:text-white z-10 rounded-xl`}
                             >
-                                <span></span>
+                                <span className="bg-gray-700 inline-block w-full h-full absolute top-0 -left-5 -translate-x-full  group-hover:translate-x-0 duration-500 -z-10 skew-x-12"></span>
                                 button
+                                <span className="bg-gray-700 inline-block w-full h-full absolute top-0 -right-5 translate-x-full  group-hover:translate-x-0 duration-500 -z-10 skew-x-12"></span>
                             </button>
                         );
                     } else {
