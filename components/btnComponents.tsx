@@ -1,7 +1,14 @@
 import React from "react";
 
 type BtnStyle = {
-    [key: string]: { bg: string; hover?: string; shadow?: string; id: number };
+    [key: string]: {
+        bg?: string;
+        hover?: string;
+        shadow?: string;
+        before?: string;
+        after?: string;
+        id: number;
+    };
 };
 
 const styles = [
@@ -20,9 +27,16 @@ const styles = [
         bg: "bg-white box-border",
         id: 3,
     },
+    //擬似要素使3のボタンを実装した
     {
-        bg: "bg-gray-600",
+        bg: "bg-gray-600 border-gray-600 text-white z-10 group opacity-1",
+        before: "before:bg-gray-200 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:-translate-x-[49%] before:skew-x-12 before:duration:500 before:-z-10 before:group-hover:-translate-x-[120%]",
+        after: "after:bg-gray-200 after:w-full after:h-full after:absolute after:top-0 after:right-0 after:translate-x-[49%] after:skew-x-12 before:group-hover:-translate-x-[120%] after:duration-500 after:-z-10",
         id: 4,
+    },
+    {
+        after: "after:absolute after:top-0 after:b-0 after:left-[-5%] after:w-[115%] after:bg-gray-300 after:duration-300 after:skew-[25deg] after:scale-x-0 z-10",
+        id: 5,
     },
 ];
 
@@ -36,18 +50,38 @@ export const BtnComponents = () => {
                         return (
                             <button
                                 key={style.id}
-                                className={`inline-block group relative overflow-hidden mx-auto w-[150px] max-w-[200px] border-gray-700 border-2 ${style.bg} hover:span:translate-none hover:text-white z-10 rounded-xl`}
+                                className={`inline-block group relative overflow-hidden mx-auto w-[150px] max-w-[200px] border-gray-700 border-2 ${style.bg} hover:span:translate-none hover:text-white z-10 rounded-full hover:font-bold`}
                             >
-                                <span className="bg-gray-700 inline-block w-full h-full absolute top-0 -left-5 -translate-x-full  group-hover:translate-x-0 duration-500 -z-10 skew-x-12"></span>
+                                <span className="bg-gray-700 inline-block w-full h-full absolute top-0 -left-5 -translate-x-full  group-hover:translate-x-0 duration-700 -z-10 skew-x-12"></span>
                                 button
-                                <span className="bg-gray-700 inline-block w-full h-full absolute top-0 -right-5 translate-x-full  group-hover:translate-x-0 duration-500 -z-10 skew-x-12"></span>
+                                <span className="bg-gray-700 inline-block w-full h-full absolute top-0 -right-5 translate-x-full  group-hover:translate-x-0 duration-700 -z-10 skew-x-12"></span>
+                            </button>
+                        );
+                    } else if (style.id === 4) {
+                        return (
+                            <button
+                                key={style.id}
+                                className={`inline-block box-border mx-auto overflow-hidden max-w-[200px] p-[20px_50px] relative ${style.bg} ${style.hover} ${style.shadow} ${style.before} ${style.after}`}
+                            >
+                                button
+                            </button>
+                        );
+                    } else if (style.id === 5) {
+                        return (
+                            <button
+                                key={style.id}
+                                className={`block mx-auto max-w-[400px] p-[50px_400px] bg-[#f2bc43] border-black border-2 overflow-hidden rounded-full relative group ${style.after}`}
+                            >
+                                <span className="relative z-10 left-0 top-0 ">
+                                    button
+                                </span>
                             </button>
                         );
                     } else {
                         return (
                             <button
                                 key={style.id}
-                                className={`inline-block mx-auto max-w-[200px] p-[20px_50px] border-gray-800 ${style.bg} ${style.hover} ${style.shadow}`}
+                                className={`inline-block mx-auto max-w-[200px] p-[20px_50px] ${style.bg} ${style.hover} ${style.shadow}`}
                             >
                                 button
                             </button>
