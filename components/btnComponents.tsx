@@ -31,11 +31,11 @@ const styles = [
     {
         bg: "bg-gray-600 border-gray-600 text-white z-10 group opacity-1",
         before: "before:bg-gray-200 before:w-full before:h-full before:absolute before:top-0 before:left-0 before:-translate-x-[49%] before:skew-x-12 before:duration:500 before:-z-10 before:group-hover:-translate-x-[120%]",
-        after: "after:bg-gray-200 after:w-full after:h-full after:absolute after:top-0 after:right-0 after:translate-x-[49%] after:skew-x-12 before:group-hover:-translate-x-[120%] after:duration-500 after:-z-10",
+        after: "after:bg-gray-200 after:w-full after:h-full after:absolute after:top-0 after:right-0 after:translate-x-[49%] after:skew-x-12 before:group-hover:-translate-x-[120%] after:duration-500 after:z-20",
         id: 4,
     },
     {
-        after: "after:absolute after:top-0 after:b-0 after:left-[-5%] after:w-[115%] after:bg-gray-300 after:duration-300 after:skew-[25deg] after:scale-x-0 z-10",
+        after: "after:absolute after:bg-gray-300 after:w-[110%] after:h-full after:top-0 after:-left-4 after:skew-x-[25deg] after:duration-300 after:scale-x-0 hover:after:scale-x-100",
         id: 5,
     },
 ];
@@ -50,7 +50,7 @@ export const BtnComponents = () => {
                         return (
                             <button
                                 key={style.id}
-                                className={`inline-block group relative overflow-hidden mx-auto w-[150px] max-w-[200px] border-gray-700 border-2 ${style.bg} hover:span:translate-none hover:text-white z-10 rounded-full hover:font-bold`}
+                                className={`inline-block group relative overflow-hidden mx-auto w-[150px] max-w-[200px] border-gray-700 border-2 ${style.bg} hover:span:translate-none hover:text-white rounded-full hover:font-bold`}
                             >
                                 <span className="bg-gray-700 inline-block w-full h-full absolute top-0 -left-5 -translate-x-full  group-hover:translate-x-0 duration-700 -z-10 skew-x-12"></span>
                                 button
@@ -70,9 +70,9 @@ export const BtnComponents = () => {
                         return (
                             <button
                                 key={style.id}
-                                className={`block mx-auto max-w-[400px] p-[50px_400px] bg-[#f2bc43] border-black border-2 overflow-hidden rounded-full relative group ${style.after}`}
+                                className={`block mx-auto max-w-[400px] p-[50px_400px] bg-[#f2bc43] border-black border-2 rounded-full relative group z-20 overflow-hidden ${style.after}`}
                             >
-                                <span className="relative z-10 left-0 top-0 ">
+                                <span className="relative z-20 left-0 top-0 ">
                                     button
                                 </span>
                             </button>
