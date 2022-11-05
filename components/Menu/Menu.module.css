@@ -1,0 +1,27 @@
+.MenuIcon {
+    background-color: transparent;
+    margin: 30px;
+    display: grid;
+    gap: 6px;
+}
+
+.MenuIcon > span {
+    background-color: black;
+    width: 40px;
+    height: 3px;
+    transition: transform 0.7s;
+}
+
+.openMenuIcon > span:nth-child(1) {
+    transition-delay: 0.7ms;
+    transform: translateY(9px) rotate(135deg);
+}
+.openMenuIcon > span:nth-child(2) {
+    transition-delay: 0.7ms;
+    transform: translateX(-15px) scaleX(0);
+}
+
+.openMenuIcon > span:nth-child(3) {
+    transition-delay: 0.7ms;
+    transform: translateY(-9px) rotate(-135deg);
+}
