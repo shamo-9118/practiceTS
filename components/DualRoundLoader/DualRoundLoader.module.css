@@ -18,7 +18,7 @@
     animation-duration: 2s;
     timing-funciton: ease-in-out;
 }
-.RoundLoader >div:nth-child(2){
+.RoundLoader > div:nth-child(2){
     animation-delay: -3s;
 }
 
