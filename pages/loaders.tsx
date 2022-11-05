@@ -1,7 +1,15 @@
 import { NextPage } from "next";
-import { Loader1 } from "../components/Loader/Loader1";
+import { SimpleLoader } from "../components/Loader/SimpleLoader";
+import { SquareLoader } from "../components/SquareLoader/SquareLoader";
+import {DualRoundLoader} from "../components/DualRoundLoader/DualRoundLoader"
 
 const Loaders = () => {
-    return <Loader1></Loader1>;
+    return (
+        <>
+            <SimpleLoader></SimpleLoader>
+            <SquareLoader></SquareLoader>
+            <DualRoundLoader></DualRoundLoader>
+        </>
+    );
 };
 export default Loaders;
