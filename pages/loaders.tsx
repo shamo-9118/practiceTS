@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import { Loader1 } from "../components/Loader/Loader1";
+import { SimpleLoader } from "../components/Loader/SimpleLoader";
 
 const Loaders = () => {
-    return <Loader1></Loader1>;
+    return <SimpleLoader></SimpleLoader>;
 };
 export default Loaders;
