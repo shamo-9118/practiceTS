@@ -1,0 +1,72 @@
+.CharContainer {
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.CharAnimation {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+.CharAnimation > span {
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    display: inline-block;
+    margin: 0 6px 0;
+}
+
+.CharAnimation > span {
+    /* opacity: 1;
+    transform: translateX(-50%); 
+    transition-duration: 700ms; */
+    opacity: 1;
+    animation: show-Char;
+    animation-iteration-count: infinite;
+    animation-dulation: 1s;
+    timing-function: ease-in-out;
+    /* animation-fill-mode: both; */
+}
+
+.CharAnimation > span:nth-child(1) {
+    transition-delay: 100ms;
+}
+.CharAnimation > span:nth-child(2) {
+    transition-delay: 200ms;
+}
+.CharAnimation > span:nth-child(3) {
+    transition-delay: 300ms;
+}
+.CharAnimation > span:nth-child(4) {
+    transition-delay: 400ms;
+}
+.CharAnimation > span:nth-child(5) {
+    transition-delay: 500ms;
+}
+.CharAnimation > span:nth-child(6) {
+    transition-delay: 600ms;
+}
+.CharAnimation > span:nth-child(7) {
+    transition-delay: 700ms;
+}
+.CharAnimation > span:nth-child(8) {
+    transition-delay: 800ms;
+}
+.CharAnimation > span:nth-child(9) {
+    transition-delay: 900ms;
+}
+
+/* .CharAnimation */
+@keyframes show-Char {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
