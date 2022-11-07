@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { BtnComponents } from "../components/btnComponents";
+import { ImgAnimation } from "../components/ImgAnimation/ImgAnimation";
 import { Radius } from "../components/Radius";
 import {Rotate} from "../components/routate"
 
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
         <div>
             <Rotate></Rotate>
             <BtnComponents />
-            <Radius></Radius>
+            <ImgAnimation></ImgAnimation>
         </div>
     );
 };

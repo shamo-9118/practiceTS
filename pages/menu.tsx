@@ -1,5 +1,6 @@
 import { CharAnimation } from "../components/CharAnimation/CharAnimation";
 import { Menu } from "../components/Menu/Menu";
+import { ImgAnimation } from "../components/ImgAnimation/ImgAnimation";
 
 const menu = () => {
     return (
