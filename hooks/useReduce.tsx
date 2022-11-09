@@ -1,4 +1,4 @@
-export const Reduce =()=>{
+export const useReduce =()=>{
        // const hello =(callback:any,name:string)=>{
     //     console.log(callback);
     //     console.log("hello" + callback(name));
@@ -10,7 +10,7 @@ export const Reduce =()=>{
     const str = "animation";
     const strArry = str.split("");
 
-    const result = strArry.reduce((accu, curr) => {
+    const result = strArry.reduce((accu:any, curr:any) => {
         console.log(accu)
         console.log(`${accu} <${curr}>`);
         return `${accu} <${curr}>`;
