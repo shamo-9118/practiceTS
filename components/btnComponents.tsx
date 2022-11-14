@@ -9,6 +9,18 @@ type BtnStyle = {
     id: number;
 };
 
+const foo = (value: string | null) => {
+    if (!value) {
+        console.log(value);
+        console.log("null");
+        return;
+    }
+    console.log(value);
+    return;
+};
+
+foo("true!!");
+
 const styles = [
     {
         bg: "bg-gray-300",
