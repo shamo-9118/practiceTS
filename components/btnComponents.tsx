@@ -1,14 +1,12 @@
 import React from "react";
 
 type BtnStyle = {
-    [key: string]: {
-        bg?: string;
-        hover?: string;
-        shadow?: string;
-        before?: string;
-        after?: string;
-        id: number;
-    };
+    bg?: string;
+    hover?: string;
+    shadow?: string;
+    before?: string;
+    after?: string;
+    id: number;
 };
 
 const styles = [
@@ -44,7 +42,6 @@ export const BtnComponents = () => {
     return (
         <div className="my-5 grid gap-3 grid-cols-2 w-1/2 mx-auto">
             {styles.map((style) => {
-                console.log(style);
                 {
                     if (style.id === 3) {
                         return (

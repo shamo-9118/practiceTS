@@ -1,4 +1,4 @@
-export const useReduce =()=>{
+// export const useReduce =()=>{
        // const hello =(callback:any,name:string)=>{
     //     console.log(callback);
     //     console.log("hello" + callback(name));
@@ -7,15 +7,15 @@ export const useReduce =()=>{
     //     return  person;
     // },"マイケル")
 
-    const str = "animation";
-    const strArry = str.split("");
+    // const str = "animation";
+    // const strArry = str.split("");
 
-    const result = strArry.reduce((accu:any, curr:any) => {
-        console.log(accu)
-        console.log(`${accu} <${curr}>`);
-        return `${accu} <${curr}>`;
-    }, "");
-    console.log(result);
+    // const result = strArry.reduce((accu:any, curr:any) => {
+    //     console.log(accu)
+    //     console.log(`${accu} <${curr}>`);
+    //     return `${accu} <${curr}>`;
+    // }, "");
+    // console.log(result);
 
     // const arry =["a","b","c","d","e"]
 
