@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 const formItemList = [
   { label: '名前', placeholder: '山田太郎', type: 'text', name: 'user' },
@@ -16,9 +16,11 @@ const formItemList = [
   },
 ]
 
-const form = () => {
-  const hundleInput = (e: ChangeEvent) => {
-    console.log('🚀  hundleInput  e:', e.target)
+const Form = () => {
+  const initialValue = { username: '', mailAddress: '', password: '' }
+  const [formValue, setFormValue] = useState(initialValue)
+  const hundleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log('🚀  hundleInput  e.target.value:', e.target.value)
   }
   return (
     <div className='flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-[100vh] text-[#333]'>
@@ -54,4 +56,4 @@ const form = () => {
   )
 }
 
-export default form
+export default Form
