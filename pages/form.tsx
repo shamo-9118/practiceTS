@@ -18,7 +18,7 @@ const formItemList = [
 
 const form = () => {
   return (
-    <div className='flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-[100vh]'>
+    <div className='flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-[100vh] text-[#333]'>
       <form
         action='post'
         className='flex flex-col gap-4 bg-white rounded-xl p-7 w-1/2'
@@ -33,6 +33,7 @@ const form = () => {
               <div key={item.name} className='flex flex-col gap-2'>
                 <label>{item.label}</label>
                 <input
+                  className='p-3 border-[1px] border-zinc-200 rounded-md'
                   type={item.type}
                   name={item.name}
                   placeholder={item.placeholder}
@@ -41,7 +42,9 @@ const form = () => {
             )
           })}
         </div>
-        <button className=''>確認画面</button>
+        <button className='bg-blue-300 rounded-full w-1/2 py-3 m-[16px_auto_0]'>
+          確認画面
+        </button>
       </form>
     </div>
   )
