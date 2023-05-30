@@ -17,6 +17,9 @@ const formItemList = [
 ]
 
 const form = () => {
+  const hundleInput = (e: ChangeEvent) => {
+    console.log('🚀  hundleInput  e:', e.target)
+  }
   return (
     <div className='flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-[100vh] text-[#333]'>
       <form
@@ -37,6 +40,7 @@ const form = () => {
                   type={item.type}
                   name={item.name}
                   placeholder={item.placeholder}
+                  onChange={(e) => hundleInput(e)}
                 />
               </div>
             )
