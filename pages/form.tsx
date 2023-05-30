@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from 'react'
 
 const formItemList = [
-  { label: '名前', placeholder: '山田太郎', type: 'text', name: 'user' },
+  { label: '名前', placeholder: '山田太郎', type: 'text', name: 'username' },
   {
     label: 'メールアドレス',
     placeholder: 'example@example.com',
     type: 'text',
-    name: 'mailadress',
+    name: 'mailAdress',
   },
   {
     label: 'パスワード',
@@ -20,7 +20,8 @@ const Form = () => {
   const initialValue = { username: '', mailAddress: '', password: '' }
   const [formValue, setFormValue] = useState(initialValue)
   const hundleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log('🚀  hundleInput  e.target.value:', e.target.value)
+    const { name, value } = e.target
+    setFormValue({ ...formValue, [name]: value })
   }
   return (
     <div className='flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-[100vh] text-[#333]'>
