@@ -64,7 +64,7 @@ const Form = () => {
     console.log('🚀  validate  errors:', errors)
     return errors
   }
-  
+
   return (
     <div className='flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-[100vh] text-[#333]'>
       <form
@@ -88,6 +88,7 @@ const Form = () => {
                   placeholder={item.placeholder}
                   onChange={(e) => hundleInput(e)}
                 />
+                {/* TODO: エラーがあるときにテキストを出す */}
               </div>
             )
           })}
