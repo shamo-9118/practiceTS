@@ -36,9 +36,6 @@ const Form = () => {
 
   const hundleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // ログイン情報を送信する
-    // バリデーションチェック => エラー用の配列を用意して正しくない値の場合はエラー用のオブジェクトに入れる
-    // name属性をkeyとしてエラー文を値にする
     setFormErrors(validate(formValue))
   }
 
@@ -64,7 +61,7 @@ const Form = () => {
     } else if (values.password.length > 15) {
       errors.password = 'パスワードは4文字以上15文字以内で入力してください'
     }
-    
+    console.log('🚀  validate  errors:', errors)
     return errors
   }
   return (
