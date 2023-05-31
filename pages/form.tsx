@@ -1,4 +1,12 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
+
+type FormValues = {
+  username: string
+  mailAddress: string
+  password: string
+}
+
+type FormError = { [P in keyof FormValues]?: string }
 
 const formItemList = [
   { label: '名前', placeholder: '山田太郎', type: 'text', name: 'username' },
@@ -19,15 +27,52 @@ const formItemList = [
 const Form = () => {
   const initialValue = { username: '', mailAddress: '', password: '' }
   const [formValue, setFormValue] = useState(initialValue)
+  const [formErrors, setFormErrors] = useState({})
+
   const hundleInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormValue({ ...formValue, [name]: value })
+  }
+
+  const hundleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    // ログイン情報を送信する
+    // バリデーションチェック => エラー用の配列を用意して正しくない値の場合はエラー用のオブジェクトに入れる
+    // name属性をkeyとしてエラー文を値にする
+    setFormErrors(validate(formValue))
+  }
+
+  const validate = (values: FormValues): FormError => {
+    const errors: FormError = {}
+    const mailRegex =
+      /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/
+
+    if (!values.username) {
+      errors.username = 'ユーザー名を登録してください'
+    }
+
+    if (!values.mailAddress) {
+      errors.mailAddress = 'メールアドレスを登録してください'
+    } else if (!mailRegex.test(values.mailAddress)) {
+      errors.mailAddress = '正しいメールアドレスを入力してください'
+    }
+
+    if (!values.password) {
+      errors.password = 'パスワードを登録してください'
+    } else if (values.password.length < 4) {
+      errors.password = 'パスワードは4文字以上15文字以内で入力してください'
+    } else if (values.password.length > 15) {
+      errors.password = 'パスワードは4文字以上15文字以内で入力してください'
+    }
+    
+    return errors
   }
   return (
     <div className='flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-[100vh] text-[#333]'>
       <form
         action='post'
         className='flex flex-col gap-4 bg-white rounded-xl p-7 w-1/2'
+        onSubmit={(e) => hundleSubmit(e)}
       >
         <div className='flex flex-col gap-3'>
           <h1 className='text-center text-2xl font-bold'>ログインフォーム</h1>
