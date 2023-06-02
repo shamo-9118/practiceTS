@@ -14,7 +14,7 @@ const formItemList = [
     label: 'メールアドレス',
     placeholder: 'example@example.com',
     type: 'text',
-    name: 'mailAdress',
+    name: 'mailAddress',
   },
   {
     label: 'パスワード',
