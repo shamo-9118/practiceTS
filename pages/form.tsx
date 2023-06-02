@@ -89,6 +89,7 @@ const Form = () => {
                   onChange={(e) => hundleInput(e)}
                 />
                 {/* TODO: エラーがあるときにテキストを出す */}
+                <p>{formErrors[item.name]}</p>
               </div>
             )
           })}
