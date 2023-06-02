@@ -61,7 +61,6 @@ const Form = () => {
     } else if (values.password.length > 15) {
       errors.password = 'パスワードは4文字以上15文字以内で入力してください'
     }
-    console.log('🚀  validate  errors:', errors)
     return errors
   }
 
