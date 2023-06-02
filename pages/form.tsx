@@ -22,7 +22,7 @@ const formItemList = [
     type: 'text',
     name: 'password',
   },
-]
+] as const
 
 const Form = () => {
   const initialValue = { username: '', mailAddress: '', password: '' }
