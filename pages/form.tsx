@@ -77,7 +77,9 @@ const Form = () => {
         onSubmit={(e) => hundleSubmit(e)}
       >
         <div className='flex flex-col gap-3'>
-          <h1 className='text-center text-2xl font-bold'>ログインフォーム</h1>
+          <h1 className='text-center text-2xl font-bold'>
+            お問い合わせフォーム
+          </h1>
           <hr />
         </div>
         <div className='flex flex-col gap-3 '>
@@ -92,7 +94,6 @@ const Form = () => {
                   placeholder={item.placeholder}
                   onChange={(e) => hundleInput(e)}
                 />
-                {/* TODO: エラーがあるときにテキストを出す */}
                 <p>{formErrors[item.name]}</p>
               </div>
             )
