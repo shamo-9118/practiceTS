@@ -9,7 +9,12 @@ type FormValues = {
 type FormError = { [P in keyof FormValues]?: string }
 
 const formItemList = [
-  { label: '名前', placeholder: '山田太郎', type: 'text', name: 'username' },
+  {
+    label: '名前',
+    placeholder: '山田太郎',
+    type: 'text',
+    name: 'username',
+  },
   {
     label: 'メールアドレス',
     placeholder: 'example@example.com',
@@ -27,7 +32,7 @@ const formItemList = [
 const Form = () => {
   const initialValue = { username: '', mailAddress: '', password: '' }
   const [formValue, setFormValue] = useState(initialValue)
-  const [formErrors, setFormErrors] = useState({})
+  const [formErrors, setFormErrors] = useState<FormError>({})
 
   const hundleInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
