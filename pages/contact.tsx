@@ -1,32 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
+import { formItemList } from '../constants/formItemList'
 
-type FormValues = {
-  username: string
-  mailAddress: string
-  password: string
-}
-
-type FormError = { [P in keyof FormValues]?: string }
-
-const formItemList = [
-  {
-    label: '名前',
-    placeholder: '山田太郎',
-    type: 'text',
-    name: 'username',
-  },
-  {
-    label: 'メールアドレス',
-    placeholder: 'example@example.com',
-    type: 'text',
-    name: 'mailAddress',
-  },
-  {
-    label: 'お問い合わせ内容',
-    type: 'text',
-    name: 'password',
-  },
-] as const
+import type { FormError, FormValues } from '../types/formTypes'
 
 const Form = () => {
   const initialValue = { username: '', mailAddress: '', password: '' }
